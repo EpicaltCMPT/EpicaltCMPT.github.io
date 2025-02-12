@@ -33,10 +33,10 @@ export default function Sidebar({
           <button
             key={item.name}
             onClick={() => setPage(item.name)}
-            className={`w-full bg-terminal-button text-left px-3 py-2 rounded-sm flex items-center transition-colors
+            className={`w-full text-left px-3 py-2 rounded-sm flex items-center transition-colors
               ${currentPage === item.name 
                 ? 'bg-terminal-accent/10 text-terminal-accent border border-terminal-accent/20'
-                : 'hover:bg-gray-100 dark:hover:bg-terminal-accent/5 hover:text-terminal-accent'
+                : `hover:text-terminal-accent ${isDark ? 'bg-terminal-button dark:hover:bg-terminal-accent/5 hover:bg-gray-100' : 'bg-gray-50 hover:bg-gray-100'}`
               }`}
           >
             <span className="mr-3 opacity-70">{item.icon}</span>
