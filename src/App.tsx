@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import StatusBar from './components/statusbar';
 import Home from './pages/Home';
+import Contact from './pages/Contact';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -30,7 +31,8 @@ export default function App() {
         <Sidebar setPage={setCurrentPage} currentPage={currentPage} isDark={isDark} setIsDark={setIsDark} />
         <main className="flex-1 p-8 overflow-auto border-l border-gray-200 dark:border-terminal-accent/30">
           <div className="mx-auto">
-            {currentPage === "Home" && <Home />}
+            {currentPage === "Home" && <Home isDark={isDark} setPage={setCurrentPage} />}
+            {currentPage === "Contact" && <Contact isDark={isDark} />}
           </div>
         </main>
       </div>

@@ -13,7 +13,8 @@ export default function Sidebar({
     { name: "Home", shortcut: "h", icon: "📄" },
     { name: "About", shortcut: "j", icon: "👤" },
     { name: "Projects", shortcut: "k", icon: "⌨️" },
-    { name: "Experience", shortcut: "l", icon: "💼" }
+    { name: "Experience", shortcut: "l", icon: "💼" },
+    { name: "Contact", shortcut: "c", icon: "✉️" }
   ];
 
   return (
