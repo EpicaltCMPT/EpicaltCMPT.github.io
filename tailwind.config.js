@@ -1,17 +1,45 @@
+import { Terminal } from 'lucide-react';
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
     content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
   	extend: {
+		keyframes: {
+			blink: {
+			  '0%, 100%': { opacity: '1' },
+			  '50%': { opacity: '0' },
+			}
+		},
+
+		animation: {
+			blink: 'blink 1s step-end infinite',
+		},
+	
+
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+		fontFamily: {
+			mono: ['JetBrains Mono', 'monospace']
+		},
+
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
+			'terminal-bg': '#1a1b26',
+        	'terminal-text': '#a9b1d6',
+        	'terminal-accent': '#7aa2f7',
+        	'terminal-black': '#24283b',
+        	'terminal-button': '#1a1b26',
+			Terminal: {
+				bg: "#1E1E1E",
+          		text: "#00FF00",
+          		accent: "#4EC9B0",
+			},
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'

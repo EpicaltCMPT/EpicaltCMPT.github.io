@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import Sidebar from './components/Sidebar';
+import StatusBar from './components/statusbar';
+import Home from './pages/Home';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [currentPage, setCurrentPage] = useState('Home');
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      // if (e.ctrlKey) {
+        console.log(e.key)
+        switch (e.key.toLowerCase()) {
+          case 'h': setCurrentPage('Home'); break;
+          case 'j': setCurrentPage('About'); break;
+          case 'k': setCurrentPage('Projects'); break;
+          case 'l': setCurrentPage('Experience'); break;
+        }
+      // }
+    }
+  
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={`h-screen flex flex-col font-mono ${isDark ? 'dark' : ''}`}>
+      <div className="flex flex-1 overflow-hidden bg-white dark:bg-terminal-bg text-gray-900 dark:text-terminal-text">
+        <Sidebar setPage={setCurrentPage} currentPage={currentPage} isDark={isDark} setIsDark={setIsDark} />
+        <main className="flex-1 p-8 overflow-auto border-l border-gray-200 dark:border-terminal-accent/30">
+          <div className="mx-auto">
+            {currentPage === "Home" && <Home />}
+          </div>
+        </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <StatusBar currentPage={currentPage} />
+    </div>
+  );
 }
-
-export default App
