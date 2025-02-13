@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
+import ImageFrame from '../components/ImageFrame';
 
 interface Project {
   id: number;
@@ -95,13 +96,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDark}) => {
               isDark ? 'bg-[#1a1b26]' : 'bg-white'
             }`}
           >
-            <div className="aspect-[16/9] mb-6 overflow-hidden rounded-md">
-              <img 
-                src={currentProject.image} 
-                alt={currentProject.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
+
 
             <div className="space-y-4">
               <h2 className="text-xl text-[#7aa2f7] h-7">

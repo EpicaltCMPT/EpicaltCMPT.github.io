@@ -49,7 +49,7 @@ export default function Sidebar({
 
       <div className="pt-6 border-t border-gray-200 dark:border-terminal-accent/10 text-sm opacity-70">
         <p className="mb-2">Based in Vancouver, BC</p>
-        <p>v1.0.0</p>
+        <p>v1.1.0</p>
       </div>
     </div>
   );
