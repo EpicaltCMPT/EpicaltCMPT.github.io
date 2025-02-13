@@ -4,7 +4,7 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ isDark }) => {
     return (
-      <div className="w-[calc(100dvw-16rem)] h-full p-8 text-left">
+      <div className={`h-full w-[calc(100dvw-16rem)] p-8 ${isDark ? 'bg-[#1a1b26]' : 'bg-white'}`}>
         <h1 className="text-2xl text-[#7aa2f7] mb-6">#! About Me</h1>
         <p className="text-[#a9b1d6] mb-8">Test this</p>
         

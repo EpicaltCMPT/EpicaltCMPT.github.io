@@ -4,7 +4,7 @@ interface ProjectsProps {
 
 const Projects: React.FC<ProjectsProps> = ({ isDark }) => {
     return (
-      <div className="h-full w-[calc(100dvw-16rem)] p-8 bg-white dark:bg-[#1a1b26]">
+        <div className={`h-full w-[calc(100dvw-16rem)] p-8 ${isDark ? 'bg-[#1a1b26]' : 'bg-white'}`}>
         <h1 className="text-2xl text-gray-900 dark:text-[#7aa2f7] mb-6"># Projects</h1>
         <div className="space-y-6">
           <div className="border-l-4 border-gray-900 dark:border-[#7aa2f7] pl-4">
