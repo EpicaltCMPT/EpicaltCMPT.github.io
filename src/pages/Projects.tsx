@@ -21,7 +21,7 @@ const projects: Project[] = [
     id: 1,
     title: "SnowScape",
     description: "A mapping website primarily used for viewing ski resort and there current conditions/weather. Main features include: 3D terrain map that can switch between summer and winter, interactive ski resort markers, mapbox API integration, and built in weather forecast.",
-    image: "/snowscape-preview.png", // Add your image to public folder
+    image: "/snowscape-preview.png",
     githubUrl: "https://github.com/yourusername/snowscape",
     technologies: ["React.js", "ShadCN", "Tailwind.css"]
   },
@@ -30,7 +30,7 @@ const projects: Project[] = [
     id: 2,
     title: "CourseBot",
     description: "A mapping website primarily used for viewing ski resort and there current conditions/weather. Main features include: 3D terrain map that can switch between summer and winter, interactive ski resort markers, mapbox API integration, and built in weather forecast.",
-    image: "/snowscape-preview.png", // Add your image to public folder
+    image: "/snowscape-preview.png",
     githubUrl: "https://github.com/yourusername/snowscape",
     technologies: ["React.js", "ShadCN", "Tailwind.css"]
   },
@@ -39,7 +39,7 @@ const projects: Project[] = [
 const Projects: React.FC<ProjectsProps> = ({ isDark, setPage }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [key, setKey] = useState(0); // Add this to force animation reset
+  const [key, setKey] = useState(0);
 
   const nextProject = () => {
     setDirection(1);
@@ -73,12 +73,12 @@ const Projects: React.FC<ProjectsProps> = ({ isDark, setPage }) => {
   };
 
   return (
-    <div className={`h-screen max-h-[800px] w-[calc(100dvw-16rem)] max-w-4xl mx-auto p-8 ${isDark ? 'bg-[#1a1b26]' : 'bg-white'}`}>
+    <div className="h-full w-[calc(100dvw-16rem)] p-8">
       <h1 className="text-2xl text-[#7aa2f7] mb-6 flex items-center gap-2">
         <span className="text-2xl">⌨️</span> Projects
       </h1>
       
-      <div className="relative mt-8">
+      <div className="relative mt-8 max-w-lg mx-auto" style={{ height: "600px" }}>
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={currentIndex}
@@ -91,9 +91,11 @@ const Projects: React.FC<ProjectsProps> = ({ isDark, setPage }) => {
               x: { type: "spring", stiffness: 300, damping: 30 },
               opacity: { duration: 0.2 }
             }}
-            className="rounded-lg border border-[#7aa2f7]/30 p-6 bg-[#1a1b26]"
+            className={`absolute inset-0 rounded-lg border border-[#7aa2f7]/30 p-6 ${
+              isDark ? 'bg-[#1a1b26]' : 'bg-white'
+            }`}
           >
-            <div className="aspect-video mb-6 overflow-hidden rounded-md">
+            <div className="aspect-[16/9] mb-6 overflow-hidden rounded-md">
               <img 
                 src={currentProject.image} 
                 alt={currentProject.title}
@@ -111,7 +113,9 @@ const Projects: React.FC<ProjectsProps> = ({ isDark, setPage }) => {
                   cursor={false}
                 />
               </h2>
-              <div className="text-[#a9b1d6] opacity-70 min-h-[4rem]">
+              <div className={`opacity-70 min-h-[4rem] ${
+                isDark ? 'text-[#a9b1d6]' : 'text-gray-700'
+              }`}>
                 <TypeAnimation
                   key={`desc-${key}`}
                   sequence={[currentProject.description]}
@@ -125,7 +129,9 @@ const Projects: React.FC<ProjectsProps> = ({ isDark, setPage }) => {
                 {currentProject.technologies.map((tech) => (
                   <span 
                     key={tech}
-                    className="px-3 py-1 text-sm bg-[#1a1b26] text-[#7aa2f7] border border-[#7aa2f7]/30 rounded-sm"
+                    className={`px-3 py-1 text-sm text-[#7aa2f7] border border-[#7aa2f7]/30 rounded-sm ${
+                      isDark ? 'bg-[#1a1b26]' : 'bg-white'
+                    }`}
                   >
                     {tech}
                   </span>
@@ -151,7 +157,9 @@ const Projects: React.FC<ProjectsProps> = ({ isDark, setPage }) => {
 
         <button
           onClick={previousProject}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 text-[#7aa2f7] hover:text-[#7aa2f7]/80 transition-colors"
+          className={`absolute -left-10 top-1/2 -translate-y-1/2 z-10 transition-colors ${
+            isDark ? 'text-[#7aa2f7] hover:text-[#7aa2f7]/80' : 'text-gray-600 hover:text-gray-800'
+          }`}
           aria-label="Previous project"
         >
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -161,7 +169,9 @@ const Projects: React.FC<ProjectsProps> = ({ isDark, setPage }) => {
 
         <button
           onClick={nextProject}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 text-[#7aa2f7] hover:text-[#7aa2f7]/80 transition-colors"
+          className={`absolute -right-10 top-1/2 -translate-y-1/2 z-10 transition-colors ${
+            isDark ? 'text-[#7aa2f7] hover:text-[#7aa2f7]/80' : 'text-gray-600 hover:text-gray-800'
+          }`}
           aria-label="Next project"
         >
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
