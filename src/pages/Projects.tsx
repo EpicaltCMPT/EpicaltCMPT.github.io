@@ -23,19 +23,19 @@ const projects: Project[] = [
   {
     id: 1,
     title: "SnowScape",
-    description: "A mapping website primarily used for viewing ski resort and there current conditions/weather. Main features include: 3D terrain map that can switch between summer and winter, interactive ski resort markers, mapbox API integration, and built in weather forecast. NOTE: Not published on Github yet.",
+    description: "A mapping website primarily used for viewing ski resort and there current conditions/weather. Main features include: 3D terrain map that can switch between summer and winter, interactive ski resort markers, mapbox API integration, and built in weather forecast. NOTE: Not on Github yet.",
     image: snowscapePreview,
-    githubUrl: "https://github.com/yourusername/snowscape",
+    githubUrl: "https://github.com/",
     technologies: ["React.js", "ShadCN", "Tailwind.css"]
   },
 
   {
     id: 2,
     title: "CourseBot",
-    description: "A mapping website primarily used for viewing ski resort and there current conditions/weather. Main features include: 3D terrain map that can switch between summer and winter, interactive ski resort markers, mapbox API integration, and built in weather forecast.",
+    description: "A Discord bot to simplify course selection at SFU by utilizing web scraping from official SFU sources. The bot features displays course information from JSON files and integrates CourseDigger and RateMyProfessor data for related courses.",
     image: coursebotPreview,
-    githubUrl: "https://github.com/yourusername/snowscape",
-    technologies: ["React.js", "ShadCN", "Tailwind.css"]
+    githubUrl: "https://github.com/Epicslooyer/SFUScrapeBot",
+    technologies: ["Python", "AWS", "BeautifulSoup", "Flask"]
   },
 ];
 
