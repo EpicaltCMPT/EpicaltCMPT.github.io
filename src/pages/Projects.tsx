@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-//import ImageFrame from '../components/ImageFrame';
+import ImageFrame from '../components/ImageFrame';
+import snowscapePreview from '../assets/snowscapepreview.jpeg';
+import coursebotPreview from '../assets/CourseBotPreview.png';
 
 interface Project {
   id: number;
@@ -21,8 +23,8 @@ const projects: Project[] = [
   {
     id: 1,
     title: "SnowScape",
-    description: "A mapping website primarily used for viewing ski resort and there current conditions/weather. Main features include: 3D terrain map that can switch between summer and winter, interactive ski resort markers, mapbox API integration, and built in weather forecast.",
-    image: "/snowscape-preview.png",
+    description: "A mapping website primarily used for viewing ski resort and there current conditions/weather. Main features include: 3D terrain map that can switch between summer and winter, interactive ski resort markers, mapbox API integration, and built in weather forecast. NOTE: Not published on Github yet.",
+    image: snowscapePreview,
     githubUrl: "https://github.com/yourusername/snowscape",
     technologies: ["React.js", "ShadCN", "Tailwind.css"]
   },
@@ -31,7 +33,7 @@ const projects: Project[] = [
     id: 2,
     title: "CourseBot",
     description: "A mapping website primarily used for viewing ski resort and there current conditions/weather. Main features include: 3D terrain map that can switch between summer and winter, interactive ski resort markers, mapbox API integration, and built in weather forecast.",
-    image: "/snowscape-preview.png",
+    image: coursebotPreview,
     githubUrl: "https://github.com/yourusername/snowscape",
     technologies: ["React.js", "ShadCN", "Tailwind.css"]
   },
@@ -96,7 +98,13 @@ const Projects: React.FC<ProjectsProps> = ({ isDark}) => {
               isDark ? 'bg-[#1a1b26]' : 'bg-white'
             }`}
           >
-
+            <div className="mb-6">
+              <ImageFrame 
+                src={currentProject.image} 
+                alt={currentProject.title}
+                isDark={isDark}
+              />
+            </div>
 
             <div className="space-y-4">
               <h2 className="text-xl text-[#7aa2f7] h-7">
