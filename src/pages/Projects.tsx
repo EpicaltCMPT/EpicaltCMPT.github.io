@@ -36,7 +36,7 @@ const projects: Project[] = [
   },
 ];
 
-const Projects: React.FC<ProjectsProps> = ({ isDark, setPage }) => {
+const Projects: React.FC<ProjectsProps> = ({ isDark}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [key, setKey] = useState(0);
