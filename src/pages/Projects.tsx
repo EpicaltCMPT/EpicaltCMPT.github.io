@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import ImageFrame from '../components/ImageFrame';
+//import ImageFrame from '../components/ImageFrame';
 
 interface Project {
   id: number;
