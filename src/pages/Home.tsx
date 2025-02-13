@@ -1,4 +1,8 @@
-export default function Home() {
+interface HomeProps {
+  isDark: boolean;
+}
+
+const Home: React.FC<HomeProps> = ({ isDark }) => {
   return (
     <div className="space-y-8">
       <div className="flex items-start gap-6">
@@ -24,14 +28,14 @@ export default function Home() {
 
       <div className="flex gap-4 mt-8">
         <button 
-          onClick={() => window.location.href = '#projects'}
-          className="px-4 py-2 bg-terminal-button hover:bg-terminal-accent/20 border border-terminal-accent/30 rounded-sm text-terminal-accent transition-colors font-mono"
+          onClick={() => window.location.href = '/#projects'}
+          className={`px-4 py-2 rounded-sm text-terminal-accent transition-colors font-mono border border-terminal-accent/30 ${isDark ? 'bg-terminal-button hover:bg-terminal-accent/20' : 'bg-gray-100 hover:bg-gray-200'}`}
         >
           View Projects
         </button>
         <button 
-          onClick={() => window.location.href = '#contact'}
-          className="px-4 py-2 bg-terminal-button hover:bg-terminal-accent/20 border border-terminal-accent/30 rounded-sm text-terminal-accent transition-colors font-mono"
+          onClick={() => window.location.href = '/contact'}
+          className={`px-4 py-2 rounded-sm text-terminal-accent transition-colors font-mono border border-terminal-accent/30 ${isDark ? 'bg-terminal-button hover:bg-terminal-accent/20' : 'bg-gray-100 hover:bg-gray-200'}`}
         >
           Contact Me
         </button>
@@ -39,3 +43,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;

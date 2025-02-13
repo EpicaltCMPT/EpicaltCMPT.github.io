@@ -1,0 +1,38 @@
+interface ContactProps {
+    isDark: boolean;
+}
+
+const Contact: React.FC<ContactProps> = ({ isDark }) => {
+  return (
+    <div className="w-[calc(100dvw-16rem)] h-full p-8">
+      <h1 className="text-2xl text-terminal-accent mb-6"># Contact</h1>
+      <div className="space-y-6">
+        <p className="text-lg leading-relaxed opacity-90 font-mono">
+          Contact Me through:
+        </p>
+        <div className="flex gap-4">
+          <button
+            onClick={() => window.open('https://github.com', '_blank')}
+            className={`px-4 py-2 rounded-sm text-terminal-accent transition-colors font-mono border border-terminal-accent/30 ${isDark ? 'bg-terminal-button hover:bg-terminal-accent/20' : 'bg-gray-100 hover:bg-gray-200'}`}
+          >
+            GitHub
+          </button>
+          <button
+            onClick={() => window.open('https://linkedin.com', '_blank')}
+            className={`px-4 py-2 rounded-sm text-terminal-accent transition-colors font-mono border border-terminal-accent/30 ${isDark ? 'bg-terminal-button hover:bg-terminal-accent/20' : 'bg-gray-100 hover:bg-gray-200'}`}
+          >
+            LinkedIn
+          </button>
+          <button
+            onClick={() => window.open('https://discord.com', '_blank')}
+            className={`px-4 py-2 rounded-sm text-terminal-accent transition-colors font-mono border border-terminal-accent/30 ${isDark ? 'bg-terminal-button hover:bg-terminal-accent/20' : 'bg-gray-100 hover:bg-gray-200'}`}
+          >
+            Discord
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;
