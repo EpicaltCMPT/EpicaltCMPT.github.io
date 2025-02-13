@@ -23,12 +23,12 @@ const Contact: React.FC<ContactProps> = ({ isDark }) => {
           >
             LinkedIn
           </button>
-          <button
-            onClick={() => window.open('https://discord.com', '_blank')}
+          <a
+            href='https://discord.com'
             className={`px-4 py-2 rounded-sm text-terminal-accent transition-colors font-mono border border-terminal-accent/30 ${isDark ? 'bg-terminal-button hover:bg-terminal-accent/20' : 'bg-gray-100 hover:bg-gray-200'}`}
           >
             Discord
-          </button>
+          </a>
         </div>
       </div>
     </div>

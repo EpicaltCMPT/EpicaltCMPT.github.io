@@ -32,7 +32,7 @@ export default function App() {
       <div className="flex flex-1 bg-[#1a1b26] text-[#a9b1d6]">
         <Sidebar setPage={setCurrentPage} currentPage={currentPage} isDark={isDark} setIsDark={setIsDark} />
         <main className="flex-1 min-w-0 bg-[#1a1b26]">
-          {currentPage === "Home" && <Home isDark={isDark} setPage={setCurrentPage} />}
+          {currentPage === "Home" && <Home isDark={isDark} />}
           {currentPage === "Projects" && <Projects isDark={isDark} />}
           {currentPage === "Experience" && <Experience isDark={isDark} />}
           {currentPage === "About" && <About isDark={isDark} />}
