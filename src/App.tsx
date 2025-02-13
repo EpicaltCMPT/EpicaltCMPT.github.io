@@ -29,9 +29,9 @@ export default function App() {
 
   return (
     <div className={`h-screen flex flex-col font-mono ${isDark ? 'dark' : ''}`}>
-      <div className="flex flex-1 bg-[#1a1b26] text-[#a9b1d6]">
+      <div className="flex flex-1 bg-white dark:bg-[#1a1b26] text-gray-900 dark:text-[#a9b1d6]">
         <Sidebar setPage={setCurrentPage} currentPage={currentPage} isDark={isDark} setIsDark={setIsDark} />
-        <main className="flex-1 min-w-0 bg-[#1a1b26]">
+        <main className="flex-1 min-w-0 bg-white dark:bg-[#1a1b26]">
           {currentPage === "Home" && <Home isDark={isDark} setPage={setCurrentPage} />}
           {currentPage === "Projects" && <Projects isDark={isDark} />}
           {currentPage === "Experience" && <Experience isDark={isDark} />}

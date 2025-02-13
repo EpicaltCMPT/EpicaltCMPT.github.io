@@ -1,4 +1,8 @@
-export default function About() {
+interface AboutProps {
+  isDark: boolean;
+}
+
+const About: React.FC<AboutProps> = ({ isDark }) => {
     return (
       <div className="w-[calc(100dvw-16rem)] h-full p-8 text-left">
         <h1 className="text-2xl text-[#7aa2f7] mb-6">#! About Me</h1>
@@ -19,7 +23,7 @@ export default function About() {
               {['PC Building', 'Skiing', 'Mountain Biking', 'Hiking'].map(hobby => (
                 <span 
                   key={hobby} 
-                  className="px-3 py-1 bg-[#1a1b26] text-[#7aa2f7] border border-[#7aa2f7]/30 rounded-sm"
+                  className="px-3 py-1 bg-gray-100 dark:bg-[#1a1b26] text-gray-900 dark:text-[#7aa2f7] border border-gray-300 dark:border-[#7aa2f7]/30 rounded-sm"
                 >
                   {hobby}
                 </span>
@@ -30,3 +34,5 @@ export default function About() {
       </div>
     )
 }
+
+export default About;

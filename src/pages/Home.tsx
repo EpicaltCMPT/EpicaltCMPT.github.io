@@ -1,10 +1,11 @@
 interface HomeProps {
   isDark: boolean;
+  setPage: (page: string) => void;
 }
 
-const Home: React.FC<HomeProps> = ({ isDark }) => {
+const Home: React.FC<HomeProps> = ({ isDark, setPage }) => {
   return (
-    <div className="space-y-8">
+    <div className="w-[calc(100dvw-16rem)] h-full p-8 space-y-8">
       <div className="flex items-start gap-6">
         <div className="flex-1">
           <h1 className="text-4xl font-bold mb-6 text-terminal-accent font-mono">
@@ -28,13 +29,13 @@ const Home: React.FC<HomeProps> = ({ isDark }) => {
 
       <div className="flex gap-4 mt-8">
         <button 
-          onClick={() => window.location.href = '/#projects'}
+          onClick={() => setPage('Projects')}
           className={`px-4 py-2 rounded-sm text-terminal-accent transition-colors font-mono border border-terminal-accent/30 ${isDark ? 'bg-terminal-button hover:bg-terminal-accent/20' : 'bg-gray-100 hover:bg-gray-200'}`}
         >
           View Projects
         </button>
         <button 
-          onClick={() => window.location.href = '/contact'}
+          onClick={() => setPage('Contact')}
           className={`px-4 py-2 rounded-sm text-terminal-accent transition-colors font-mono border border-terminal-accent/30 ${isDark ? 'bg-terminal-button hover:bg-terminal-accent/20' : 'bg-gray-100 hover:bg-gray-200'}`}
         >
           Contact Me
