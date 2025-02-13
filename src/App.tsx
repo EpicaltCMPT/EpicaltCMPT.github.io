@@ -33,7 +33,7 @@ export default function App() {
         <Sidebar setPage={setCurrentPage} currentPage={currentPage} isDark={isDark} setIsDark={setIsDark} />
         <main className="flex-1 min-w-0 bg-white dark:bg-[#1a1b26]">
           {currentPage === "Home" && <Home isDark={isDark} setPage={setCurrentPage} />}
-          {currentPage === "Projects" && <Projects isDark={isDark} />}
+          {currentPage === "Projects" && <Projects isDark={isDark} setPage={setCurrentPage}/>}
           {currentPage === "Experience" && <Experience isDark={isDark} />}
           {currentPage === "About" && <About isDark={isDark} />}
           {currentPage === "Contact" && <Contact isDark={isDark} />}
