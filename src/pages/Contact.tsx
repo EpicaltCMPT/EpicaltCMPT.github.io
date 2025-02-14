@@ -12,13 +12,13 @@ const Contact: React.FC<ContactProps> = ({ isDark }) => {
         </p>
         <div className="flex gap-4">
           <button
-            onClick={() => window.open('https://github.com', '_blank')}
+            onClick={() => window.open('https://github.com/EpicaltCMPT', '_blank')}
             className={`px-4 py-2 rounded-sm text-terminal-accent transition-colors font-mono border border-terminal-accent/30 ${isDark ? 'bg-terminal-button hover:bg-terminal-accent/20' : 'bg-gray-100 hover:bg-gray-200'}`}
           >
             GitHub
           </button>
           <button
-            onClick={() => window.open('https://linkedin.com', '_blank')}
+            onClick={() => window.open('https://www.linkedin.com/in/sajan-s-4613a5270/', '_blank')}
             className={`px-4 py-2 rounded-sm text-terminal-accent transition-colors font-mono border border-terminal-accent/30 ${isDark ? 'bg-terminal-button hover:bg-terminal-accent/20' : 'bg-gray-100 hover:bg-gray-200'}`}
           >
             LinkedIn
@@ -27,7 +27,7 @@ const Contact: React.FC<ContactProps> = ({ isDark }) => {
             href='https://discord.com'
             className={`px-4 py-2 rounded-sm text-terminal-accent transition-colors font-mono border border-terminal-accent/30 ${isDark ? 'bg-terminal-button hover:bg-terminal-accent/20' : 'bg-gray-100 hover:bg-gray-200'}`}
           >
-            Discord
+            Discord [BROKEN]
           </a>
         </div>
       </div>

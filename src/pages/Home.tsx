@@ -13,7 +13,7 @@ const Home: React.FC<HomeProps> = ({ isDark, setPage }) => {
           </h1>
           <p className="text-lg leading-relaxed opacity-90 font-mono">
             Hello! This is my site where you can access everything about me. The side bar 
-            gives you access to a gallery of my projects, and my resume!
+            gives you access to a gallery of my projects, and my resume! 
           </p>
         </div>
       </div>
