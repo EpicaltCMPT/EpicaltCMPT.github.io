@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { DarkModeProvider, useDarkMode } from './components/DarkModeProvider';
 import Sidebar from './components/Sidebar';
 import StatusBar from './components/statusbar';
 import Home from './pages/Home';
@@ -7,9 +8,9 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Experience from './pages/Experience';
 
-export default function App() {
+const AppContent = () => {
   const [currentPage, setCurrentPage] = useState('Home');
-  const [isDark, setIsDark] = useState(true);
+  const { isDark } = useDarkMode();
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -28,12 +29,15 @@ export default function App() {
   }, []);
 
   return (
-    <div className={`h-screen flex flex-col font-mono ${isDark ? 'dark' : ''}`}>
-      <div className="flex flex-1 bg-white dark:bg-[#1a1b26] text-gray-900 dark:text-[#a9b1d6]">
-        <Sidebar setPage={setCurrentPage} currentPage={currentPage} isDark={isDark} setIsDark={setIsDark} />
-        <main className="flex-1 min-w-0 bg-white dark:bg-[#1a1b26]">
-          {currentPage === "Home" && <Home isDark={isDark} setPage={setCurrentPage} />}
-          {currentPage === "Projects" && <Projects isDark={isDark} setPage={setCurrentPage}/>}
+    <div className="h-screen flex flex-col font-mono">
+      <div className="flex flex-1">
+        <Sidebar 
+          setPage={setCurrentPage} 
+          currentPage={currentPage} 
+        />
+        <main className="flex-1 min-w-0">
+          {currentPage === "Home" && <Home setPage={setCurrentPage} isDark={isDark} />}
+          {currentPage === "Projects" && <Projects setPage={setCurrentPage} isDark={isDark} />}
           {currentPage === "Experience" && <Experience isDark={isDark} />}
           {currentPage === "About" && <About isDark={isDark} />}
           {currentPage === "Contact" && <Contact isDark={isDark} />}
@@ -41,6 +45,14 @@ export default function App() {
       </div>
       <StatusBar currentPage={currentPage} />
     </div>
+  );
+};
+
+export default function App() {
+  return (
+    <DarkModeProvider>
+      <AppContent />
+    </DarkModeProvider>
   );
 }
 

@@ -1,14 +1,13 @@
-export default function Sidebar({ 
-  setPage, 
-  currentPage,
-  isDark,
-  setIsDark 
-}: { 
+import { useDarkMode } from './DarkModeProvider';
+
+interface SidebarProps {
   setPage: (page: string) => void;
   currentPage: string;
-  isDark: boolean;
-  setIsDark: (isDark: boolean) => void;
-}) {
+}
+
+export default function Sidebar({ setPage, currentPage }: SidebarProps) {
+  const { isDark, toggleDarkMode } = useDarkMode();
+
   const navItems = [
     { name: "Home", shortcut: "h", icon: "📄" },
     { name: "About", shortcut: "j", icon: "👤" },
@@ -22,7 +21,7 @@ export default function Sidebar({
       <div className="flex justify-between items-center mb-8">
         <span className="text-terminal-accent">Sajan S.</span>
         <button 
-          onClick={() => setIsDark(!isDark)}
+          onClick={toggleDarkMode}
           className="text-gray-500 dark:text-terminal-text"
         >
           {isDark ? '☀️' : '🌙'}
@@ -37,7 +36,7 @@ export default function Sidebar({
             className={`w-full text-left px-3 py-2 rounded-sm flex items-center transition-colors
               ${currentPage === item.name 
                 ? 'bg-terminal-accent/10 text-terminal-accent border border-terminal-accent/20'
-                : `hover:text-terminal-accent ${isDark ? 'bg-terminal-button dark:hover:bg-terminal-accent/5 hover:bg-gray-100' : 'bg-gray-50 hover:bg-gray-100'}`
+                : `hover:text-terminal-accent ${isDark ? 'bg-terminal-button dark:hover:bg-terminal-accent/5 hover:bg-gray-100' : 'bg-gray-50 hover:bg-gray-100'}` 
               }`}
           >
             <span className="mr-3 opacity-70">{item.icon}</span>

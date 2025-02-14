@@ -15,6 +15,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --terminal-accent: #7aa2f7;
+  --terminal-background: #1a1b26;
+  --terminal-text: #a9b1d6;
 }
 
 @keyframes blink {
@@ -132,6 +136,9 @@ button:focus-visible {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    color-scheme: dark;
+    --background-color: #1a1b26;
+    --text-color: #a9b1d6;
   }
 }
 
