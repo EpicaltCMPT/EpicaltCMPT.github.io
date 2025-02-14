@@ -1,50 +1,20 @@
-# React + TypeScript + Vite
+#EpicaltCMPT.github.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##Brief overview
+This is the repostiory for my personal website, to access the source code for each page refer to the src/ directory. Inside of there, you can view my different components and pages.
 
-Currently, two official plugins are available:
+Access to the site is through: [Personal site](EpicaltCMPT.github.io)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##Tutorial
+Once you first enter the site, the sidebar is mainly used to switch between pages. You can either click on each of them with your mouse, or use the according keyboard shortcut (also displayed in the sidebar):
 
-## Expanding the ESLint configuration
+* Home: h
+* About: j
+* Projects: k
+* Experience: l
+* Contact: c
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The status bar (at the bottom of the site) also shows you for each page, the corresponding .tsx file. 
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+##Licensing
+This repository is licensed under the MIT license. This is beause the MIT license offers a straightforward use of allowing the use and distribution of my code, while giving flexibility. The only requirement of use of the site is that others give credit for the original work, which could open the doors to allowing the code to be shared while the work is attributed to me. In addition, the licnese includes a disclaimer of warranty- meaning that I am not liable for any issues that could arise from others using my code. 
