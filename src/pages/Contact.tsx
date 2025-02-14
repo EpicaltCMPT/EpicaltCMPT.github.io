@@ -1,5 +1,6 @@
+
 interface ContactProps {
-    isDark: boolean;
+  isDark: boolean;
 }
 
 const Contact: React.FC<ContactProps> = ({ isDark }) => {

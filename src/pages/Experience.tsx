@@ -2,10 +2,6 @@ import ExperienceSection from '../components/ExpSect';
 import resume from '../assets/Sajan_Resume_main.pdf';
 import coverLetter from '../assets/Cover_Letter_Co-op_Preperation_main.pdf';
 
-interface ExperienceProps {
-  isDark: boolean;
-}
-
 const workExperience = [
   {
     title: "Science Alive",
@@ -23,6 +19,10 @@ const volunteerExperience = [
     description: ""
   }
 ];
+
+interface ExperienceProps {
+  isDark: boolean;
+}
 
 const Experience: React.FC<ExperienceProps> = ({ isDark }) => {
   return (
